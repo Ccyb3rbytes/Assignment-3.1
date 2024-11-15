@@ -1,0 +1,60 @@
+/* ------------- h1 style start-----------------------  */
+h1{
+color: rgb(255, 255, 255);
+text-shadow: 2px 2px 4px #2bf5b8
+
+}
+/* ------------- body style start-----------------------  */
+body{
+background-image: url(images/360_F_972210124_5DPPNcuQt4Yvqs2Xu8ffCkbBfWwJYn0M.jpg);
+background-size:cover;
+background-repeat: no-repeat;
+background-attachment: fixed;
+background-position: center;
+text-align: center;
+
+}
+/* ------------- p style start-----------------------  */
+p{
+  color: rgb(255, 255, 255);
+  text-shadow: 2px 2px 8px #ff10ff
+}
+/* ------------- main style start-----------------------  */
+.main{
+  background-image: url(images/2.png);
+  background-repeat: no-repeat;
+ 
+  width: 500px;
+  height: 300px;
+  margin-left: 200px;
+  margin-top: 100px;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 20px #2bf5b8;
+   
+
+}
+/* ------------- container style start-----------------------  */
+.container{
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ flex-direction: column;
+
+}
+
+/* ------------- style start-----------------------  */
+#result{
+  color: rgb(255, 255, 255);
+  text-shadow: 2px 2px 4px #3f22bd;
+  margin-top: 80px;
+}
+/* ------------- style start-----------------------  */
+
+/* ------------- style start-----------------------  */
+
+/* ------------- style start-----------------------  */
+
+/* ------------- style start-----------------------  */
+
+/* ------------- style start-----------------------  */

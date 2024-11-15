@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Palindrome Checker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+  <div class="main"> 
+    <h1>Palindrome Checker</h1>
+    <p>Enter a string to check if it is a palindrome.</p>
+    <input type="text" id="inputString" placeholder="Enter a string">
+    <button id="checkButton">Check</button>
+    <div id="result">
+    
+    </div>
+  </div>
+</div>
+  <script>
+
+    
+// Locates each of these items in the html document creating an empty validator for each
+const inputField = document.getElementById("inputString");
+const checkButton = document.getElementById("checkButton"); 
+const button = document.getElementById("checkButton");
+
+// This sets up an event listener on the (inputString) 
+// it listens for the keyup event which triggers when a key is released on the keyboard
+    inputField.addEventListener("keyup", function (event) {
+// This conditional statment uses the strictly equal operator to match both value and type in this case
+// its for the key with the code 13 which is the enterkey 
+      if (event.keyCode === 13) {
+// if it is the checkPalindrome() function is called.  
+        checkPalindrome();
+      }
+    });
+
+// this sets up another event listener, this time on the "check" button
+// it listens for the click event which triggers when the button is clicked. 
+    checkButton.addEventListener("click", function() {
+      checkPalindrome();
+    });
+// this function takes a (str) as input and determines if its a palindrome
+    function isPalindrome(str) {
+// (str = str.tolowercase() converts the string to lowercase then (.replace(/[^a-zA-Z0-9]/g,) is a regular expression that removes all the non-alphanumeric characters from the string normalizing it to just letters and numbers. 
+      str = str.toLowerCase().replace(/[^a-zA-Z0-9]/g, "");
+   //  ("";) whats left is the reversed string whcih is initialized as let reversedStr =="" this is where the reversed string will be built
+      let reversedStr = "";
+// (let i = str.length -1;) This initilizes a loop counter variable for i based off the str.length -1 
+// (i >=0;) this is the loop condition
+// (i--) this is the loop increment
+      for (let i = str.length - 1; i >= 0; i--) {
+// This tells the script its done when i is less than 0 
+        reversedStr += str[i];
+      }
+//Then it checks to make sure that the str is equal in both value and type to the reversed string 
+      if (str === reversedStr) {
+// if it is it returns true 
+        return true;
+      } else {
+// if its not it returns false 
+        return false;
+      }
+    }
+//this is the function that initiates the palindrome check and displaying the result 
+    function checkPalindrome() {
+// retreives the text entered by the user in the input feild 
+      const inputString = document.getElementById("inputString").value;
+//this calls the isPalindrome function passing the users input on as an argument and storing the result in the result variable
+      const result = isPalindrome(inputString);
+// gets a reference to the div element with the Id "result" which will be used to display the outcome of the palindrome check This line references the html that has the id result and stores the reference in resultDiv 
+      const resultDiv = document.getElementById("result");
+// This is the conditional statement that determines what message is going to display based on the result of the palindrome check. it is a palindrome (is a palindrome shows)
+      if (result) {
+        resultDiv.textContent = `${inputString} is a Palindrome!`;
+    //other wise (its not a palindrome) will show 
+      } else {
+        resultDiv.textContent = `${inputString} is not a Palindrome. Try Again!`;
+      }
+    }
+  </script>
+</body>
+</html>
